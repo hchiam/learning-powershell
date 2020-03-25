@@ -8,5 +8,6 @@ Related repo: <https://github.com/hchiam/learning-bash-scripts>
 
 ```bash
 brew cask install powershell
-pwsh # to verify
+pwsh
+exit
 ```

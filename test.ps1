@@ -1,3 +1,5 @@
+# to run this file, right click on it inside File Explorer, and choose "Run with PowerShell"
+
 # you can write a message to the console:
 Write-Host 'Hi!'
 
@@ -7,11 +9,16 @@ start https://microsoft.com # or: open https://microsoft.com
 # you can navigate to folders like the desktop:
 cd ~/Desktop
 
-# you can download a file: (uncomment the next line)
-# Invoke-WebRequest https://www.python.org/ftp/python/3.7.7/python-3.7.7-amd64.exe -OutFile ./install-python.exe
+# you can download a file:
+function downloadPythonInstaller {
+  # download Python 3.7 for Windows:
+  Invoke-WebRequest https://www.python.org/ftp/python/3.7.7/python-3.7.7-amd64.exe -OutFile ./setup-python-pc.exe
+}
 
-# you can run an exe: (uncomment the next line)
-# ./install-python.exe
+# you can run an exe:
+function openPythonGraphicalInstaller {
+  ./setup-python-pc.exe
+}
 
 # you can create and run a functino:
 function wait3seconds {

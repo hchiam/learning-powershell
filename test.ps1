@@ -1,6 +1,6 @@
 # to run this file, right click on it inside File Explorer, and choose "Run with PowerShell"
 
-# you can write a message to the console:
+# you can write a message to the PowerShell interface:
 Write-Host 'Hi!'
 
 # you can open a website in the user's default browser:
@@ -8,6 +8,17 @@ start https://microsoft.com # or: open https://microsoft.com
 
 # you can navigate to folders like the desktop:
 cd ~/Desktop
+
+# you can create and run a function:
+function wait3seconds {
+  Start-Sleep -s 3
+}
+
+Write-Host 'This message should show up before the 3-second delay.'
+wait3seconds
+Write-Host 'This message should show up after 3 seconds.'
+
+# here's a more complex example:
 
 # you can download a file:
 function downloadPythonInstaller {
@@ -20,16 +31,7 @@ function openPythonGraphicalInstaller {
   ./setup-python-pc.exe
 }
 
-# you can create and run a functino:
-function wait3seconds {
-  Start-Sleep -s 3
-}
-
-Write-Host 'This message should show up before the 3-second delay.'
-wait3seconds
-Write-Host 'This message should show up after 3 seconds.'
-
-# here's a more complex example:
+# you can call functions within functions:
 function installPythonIfMissing {
   $p = & { python -V } 2>&1
   if ($p -is [System.Management.Automation.ErrorRecord]) {
@@ -44,6 +46,7 @@ function installPythonIfMissing {
   }
 }
 
+# you can run pip once python is installed:
 function installDependencies {
   # pip is included with Python 3.4+
   pip install eventlet

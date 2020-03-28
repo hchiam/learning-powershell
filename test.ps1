@@ -2,15 +2,15 @@
 Write-Host 'Hi!'
 
 # you can open a website in the user's default browser:
-# start https://microsoft.com # or: open https://microsoft.com
+start https://microsoft.com # or: open https://microsoft.com
 
 # you can navigate to folders like the desktop:
 cd ~/Desktop
 
-# you can download a file:
+# you can download a file: (uncomment the next line)
 # Invoke-WebRequest https://www.python.org/ftp/python/3.7.7/python-3.7.7-amd64.exe -OutFile ./install-python.exe
 
-# you can run an exe:
+# you can run an exe: (uncomment the next line)
 # ./install-python.exe
 
 # you can create and run a functino:

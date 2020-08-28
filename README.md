@@ -18,3 +18,19 @@ brew cask install powershell
 pwsh
 exit
 ```
+
+## PowerShell command history
+
+https://www.howtogeek.com/298244/how-to-use-your-command-history-in-windows-powershell
+
+```ps1
+Get-History
+
+Get-History | Format-List -Property * # shows execution status and start/end times
+
+Get-History | Export-Clixml -Path c:\users\name\desktop\commands.xml # saves history to a file
+
+Clear-History
+
+Clear # clears PowerShell window
+```

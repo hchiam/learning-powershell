@@ -34,3 +34,11 @@ Clear-History
 
 Clear # clears PowerShell window
 ```
+
+## Beep
+
+```ps1
+[console]::beep(500,2000)
+```
+
+(1st parameter adjusts frequency, 2nd parameter adjusts duration)

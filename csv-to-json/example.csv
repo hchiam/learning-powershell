@@ -1,0 +1,4 @@
+ID,Label,Required
+1,Name,TRUE
+2,Number,FALSE
+3,Email,TRUE

@@ -1,0 +1,17 @@
+[
+  {
+    "ID": "1",
+    "Label": "Name",
+    "Required": "TRUE"
+  },
+  {
+    "ID": "2",
+    "Label": "Number",
+    "Required": "FALSE"
+  },
+  {
+    "ID": "3",
+    "Label": "Email",
+    "Required": "TRUE"
+  }
+]

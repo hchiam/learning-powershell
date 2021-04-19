@@ -1,0 +1,1 @@
+Copy-Item "input.css" -Destination "output.css"

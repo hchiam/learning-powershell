@@ -3,6 +3,12 @@
 In PowerShell:
 
 ```powershell
+./_main.ps1 ./image.png
+```
+
+or:
+
+```powershell
 ./_main.ps1 ./image_to_use_as_palette.png
 ```
 

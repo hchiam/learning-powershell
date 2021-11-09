@@ -21,6 +21,12 @@ exit
 
 ## PowerShell command history
 
+I personally like to use this:
+
+```ps1
+Get-History -Count 1 | Format-List -Property *; # for just the previous/last command
+```
+
 https://www.howtogeek.com/298244/how-to-use-your-command-history-in-windows-powershell
 
 ```ps1

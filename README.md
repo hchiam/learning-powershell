@@ -48,3 +48,11 @@ Clear # clears PowerShell window
 ```
 
 (1st parameter adjusts frequency, 2nd parameter adjusts duration)
+
+## Notify when build is done and show status
+
+```ps1
+npm run build; [console]::beep(400,2000);
+
+Get-History -Count 1 | Format-List -Property *; # you canNOT run this in a one-liner combined with the previous command, because I found it ends up printing history for the last one-liner that you entered, not for the combined one-liner that includes this history command
+```

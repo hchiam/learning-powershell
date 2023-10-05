@@ -80,3 +80,36 @@ function hist {
     Get-History;
 }
 ```
+
+## Check if command exists
+
+```ps
+Get-Command somecustomcommand
+
+function somecustomcommand {
+    npm run clean;
+    npm i;
+    npm run build;
+}
+```
+
+## Next line of code continues running even if previous line had error
+
+```ps
+function exampleShowingCodeStillRunsEvenAfterErrorIfSeparateLines {
+    asdfasdfasdf;
+    echo "this still prints";
+}
+```
+
+## Recursively delete file type
+
+```ps
+ls -r *.js | rm
+```
+
+or
+
+```ps
+ls -r your\path\*.js | rm
+```

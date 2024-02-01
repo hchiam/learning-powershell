@@ -113,3 +113,9 @@ or
 ```ps
 ls -r your\path\*.js | rm
 ```
+
+## To prompt/ask for input
+
+```ps1
+Read-Host "Hit enter to continue";
+```

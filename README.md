@@ -119,3 +119,34 @@ ls -r your\path\*.js | rm
 ```ps1
 Read-Host "Hit enter to continue";
 ```
+
+## Format PowerShell CLI with custom styling
+
+https://www.youtube.com/watch?v=gOFsACMBEac
+
+```ps
+Test-Path $PROFILE
+# likely prints out False
+
+New-Item -Path $PROFILE -Type File -Force
+
+notepad $PROFILE
+```
+
+```txt
+function prompt {
+  $path = $(Get-Location).Path
+  $path = $path.ToLower() -replace '^([a-z]):', '/$1' -replace '\\', '/' # unix style path
+  Write-Host ""
+  Write-Host $path -ForegroundColor Green
+  Write-Host "> " -NoNewLine -ForegroundColor Green
+}
+```
+
+```ps
+.$PROFILE
+# and if get disabled error
+Set-ExecutionPolicy RemoteSigned
+# y
+.$PROFILE
+```

@@ -150,3 +150,39 @@ Set-ExecutionPolicy RemoteSigned
 # y
 .$PROFILE
 ```
+
+## names of folders only immediately under ".": 
+```ps
+Get-ChildItem -Path "." -Directory
+```
+
+## number of folders only immediately under ".": 
+```ps
+(Get-ChildItem -Path "." -Directory).Count
+```
+
+## names of folders 2 levels below ".": 
+```ps
+Get-ChildItem -Path . -Directory -Recurse | Where-Object { $_.FullName.Split('\').Count -eq ((Get-Location).Path.Split('\').Count + 2) }
+```
+
+## number of folders 2 levels below ".": 
+```ps
+(Get-ChildItem -Path . -Directory -Recurse | Where-Object { $_.FullName.Split('\').Count -eq ((Get-Location).Path.Split('\').Count + 2) }).Count
+```
+
+## number of files with specific name 'example.txt' at 2 levels below ".": 
+```ps
+(Get-ChildItem -Path . -Recurse | Where-Object { $_.FullName.Split('\').Count -eq ((Get-Location).Path.Split('\').Count + 2) -and $_.Name -eq 'example.txt' }).Count
+```
+
+## write the names of folders 4 levels below "." to a file "U:\Downloads\out.txt":
+```ps
+Get-ChildItem -Path . -Directory -Recurse | Where-Object { $_.FullName.Split('\').Count -eq ((Get-Location).Path.Split('\').Count + 4) } | Out-File -FilePath "U:\Downloads\out.txt"
+```
+
+## write to file:
+
+```ps
+# ... | Out-File -FilePath "U:\Downloads\out.txt"
+```

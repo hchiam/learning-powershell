@@ -138,8 +138,8 @@ function prompt {
   $path = $(Get-Location).Path
   $path = $path.ToLower() -replace '^([a-z]):', '/$1' -replace '\\', '/' # unix style path
   Write-Host ""
-  Write-Host $path -ForegroundColor Green
-  Write-Host "> " -NoNewLine -ForegroundColor Green
+  Write-Host $path -ForegroundColor Black -BackgroundColor Cyan
+  Write-Host "> " -NoNewLine -ForegroundColor Black -BackgroundColor Cyan
 }
 ```
 

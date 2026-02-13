@@ -192,3 +192,7 @@ Get-ChildItem -Path . -Directory -Recurse | Where-Object { $_.FullName.Split('\'
 ```ps
 # ... | Out-File -FilePath "U:\Downloads\out.txt"
 ```
+
+## adb to let Windows Chrome inspect Android Chrome with port forwarding
+
+[port-forwarding.ps1](https://github.com/hchiam/learning-powershell/blob/main/port-forwarding.ps1)

@@ -196,3 +196,12 @@ Get-ChildItem -Path . -Directory -Recurse | Where-Object { $_.FullName.Split('\'
 ## adb to let Windows Chrome inspect Android Chrome with port forwarding
 
 [port-forwarding.ps1](https://github.com/hchiam/learning-powershell/blob/main/port-forwarding.ps1)
+
+## passing args as given to powershell alias function
+
+```ps1
+# this will work with or without any arguments passed in:
+function cla {
+    claude @args
+}
+```

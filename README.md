@@ -238,7 +238,8 @@ const db = new
 DatabaseSync('C:/Users/<YOUR-USER-NAME>/AppData/Roaming/Code/User/workspaceStorage/<SOME-ALPHA-NUMERIC-CODE>/state.vscdb');
 const row = db.prepare(`SELECT value FROM ItemTable WHERE key='memento/workbench.parts.editor'`).get();
 const data = JSON.parse(row.value)['editorpart.state'].serializedGrid.root.data[0].data.editors;
-console.log(data.map(e => JSON.parse(e.value)?.resourceJSON?.fsPath || e.id).join('\n'));
+console.log(data.map(editor => JSON.parse(editor.value)?.resourceJSON?.fsPath || editor.id).join('\n'));
 '@
 }
 ```
+

@@ -225,3 +225,20 @@ console.log('Open tabs:', editors.length);
 '@
 }
 ```
+
+## list the VSCode tabs that are open
+
+```ps1
+function list-vscode-tabs {
+    # Requires Node.js 22.5+
+    # Find your workspaceStorage hash at: %APPDATA%\Code\User\workspaceStorage\
+    node -e @'
+const { DatabaseSync } = require('node:sqlite');
+const db = new 
+DatabaseSync('C:/Users/<YOUR-USER-NAME>/AppData/Roaming/Code/User/workspaceStorage/<SOME-ALPHA-NUMERIC-CODE>/state.vscdb');
+const row = db.prepare(`SELECT value FROM ItemTable WHERE key='memento/workbench.parts.editor'`).get();
+const data = JSON.parse(row.value)['editorpart.state'].serializedGrid.root.data[0].data.editors;
+console.log(data.map(e => JSON.parse(e.value)?.resourceJSON?.fsPath || e.id).join('\n'));
+'@
+}
+```

@@ -205,3 +205,23 @@ function cla {
     claude @args
 }
 ```
+
+## count the number of VSCode tabs open
+
+```ps1
+function count-vscode-tabs {
+    # Requires Node.js 22.5+
+    # Find your workspaceStorage hash at: 
+%APPDATA%\Code\User\workspaceStorage\
+    node -e @'
+const { DatabaseSync } = require('node:sqlite');
+const db = new 
+DatabaseSync('C:/Users/<YOUR-USER-NAME>/AppData/Roaming/Code/User/workspaceStorage/<SOME-ALPHA-NUMERIC-CODE>/state.vscdb');
+const row = db.prepare(`SELECT value FROM ItemTable WHERE 
+key='memento/workbench.parts.editor'`).get();
+const editors = 
+JSON.parse(row.value)['editorpart.state'].serializedGrid.root.data[0].data.editors;
+console.log('Open tabs:', editors.length);
+'@
+}
+```

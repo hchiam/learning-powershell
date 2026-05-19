@@ -243,3 +243,12 @@ console.log(data.map(editor => JSON.parse(editor.value)?.resourceJSON?.fsPath ||
 }
 ```
 
+## read end of long file fast
+
+```ps1
+function readfileend {
+    # reads even long files fast and returns last 25 lines by default
+    param([Parameter(Mandatory)][string]$Path, [int]$Tail = 25)
+    Get-Content $Path -Tail $Tail
+}
+```

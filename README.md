@@ -252,3 +252,12 @@ function readfileend {
     Get-Content $Path -Tail $Tail
 }
 ```
+
+## getting `COMPUTERNAME`
+
+```ps1
+echo $env:COMPUTERNAME
+# if the following don't work:
+echo $COMPUTERNAME
+echo %COMPUTERNAME%
+```
